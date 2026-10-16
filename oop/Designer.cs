@@ -1,0 +1,14 @@
+class Designer : Employee
+{
+    public string DesignTool{get;private set;}
+    public Designer(string name, decimal salary, string designTool) : base(name, salary)
+    {
+        if(string.IsNullOrWhiteSpace(designTool)) throw new ArgumentException("Design tool cannot be empty");
+        DesignTool=designTool;
+    }
+
+    public override void Work()
+    {
+        Console.WriteLine($"Designer {Name} is working in {DesignTool}.");
+    }
+}
