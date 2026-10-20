@@ -1,8 +1,8 @@
-abstract class Employee
+abstract class Employee : IReportable
 {
     private static int count=0;
     public int Id{ get ; private set;}
-    public string Name{ get ; private set;}
+    public string Name{ get;}
     public decimal Salary{ get ; private set;}
     public abstract void Work();
     protected Employee(string name,decimal salary)
@@ -12,6 +12,16 @@ abstract class Employee
         Salary=salary;
         Name=name;
         Id=count++;
+    }
+    public void ChangeSalary(decimal salary)
+    {
+        if(salary<0) throw new ArgumentOutOfRangeException("Salary cannot be negative");
+        Salary=salary;
+    }
+
+     public  virtual  void GenerateReport()
+    {
+        Console.Write($"My name is {Name},I have a number {Id} and I earn a salary = {Salary}");
     }
 
 }

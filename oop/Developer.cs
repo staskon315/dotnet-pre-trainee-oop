@@ -11,4 +11,9 @@ class Developer : Employee
     {
         Console.WriteLine($"Developer {Name} is writing {ProgrammingLanguage} code.");
     }
+    public override void GenerateReport()
+    {
+        base.GenerateReport();
+        Console.WriteLine($" I am a Developer,I write in {ProgrammingLanguage}");
+    }
 }

@@ -11,4 +11,9 @@ class Designer : Employee
     {
         Console.WriteLine($"Designer {Name} is working in {DesignTool}.");
     }
+    public override void GenerateReport()
+    {
+        base.GenerateReport();
+        Console.WriteLine($" I am a Designer,I draw using a {DesignTool}");
+    }
 }

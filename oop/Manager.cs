@@ -11,4 +11,9 @@ class Manager : Employee
     {
         Console.WriteLine($"Manager {Name} is managing a team of {TeamSize} people.");
     }
+    public override void GenerateReport()
+    {
+        base.GenerateReport();
+        Console.WriteLine($" I am a Manager,My team consists of {TeamSize} people");
+    }
 }
