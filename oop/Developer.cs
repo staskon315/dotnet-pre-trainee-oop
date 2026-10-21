@@ -7,13 +7,12 @@ class Developer : Employee
         ProgrammingLanguage=programmingLanguage;
     }
 
-    public override void Work()
-    {
-        Console.WriteLine($"Developer {Name} is writing {ProgrammingLanguage} code.");
-    }
+    public override void Work()=>Console.WriteLine($"Developer {Name} is writing {ProgrammingLanguage} code.");
+    
     public override void GenerateReport()
     {
         base.GenerateReport();
         Console.WriteLine($" I am a Developer,I write in {ProgrammingLanguage}");
     }
+    
 }

@@ -7,10 +7,8 @@ class Designer : Employee
         DesignTool=designTool;
     }
 
-    public override void Work()
-    {
-        Console.WriteLine($"Designer {Name} is working in {DesignTool}.");
-    }
+    public override void Work()=>Console.WriteLine($"Designer {Name} is working in {DesignTool}.");
+    
     public override void GenerateReport()
     {
         base.GenerateReport();

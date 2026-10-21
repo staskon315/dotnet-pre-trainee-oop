@@ -1,5 +1,6 @@
 abstract class Employee : IReportable
 {
+    public event Action<string>? SalaryChanged;
     private static int count=0;
     public int Id{ get ; private set;}
     public string Name{ get;}
@@ -16,12 +17,10 @@ abstract class Employee : IReportable
     public void ChangeSalary(decimal salary)
     {
         if(salary<0) throw new ArgumentOutOfRangeException("Salary cannot be negative");
+        SalaryChanged?.Invoke($"Salary for {Name} has been changed from {Salary} to {salary}");
         Salary=salary;
+        
     }
-
-     public  virtual  void GenerateReport()
-    {
-        Console.Write($"My name is {Name},I have a number {Id} and I earn a salary = {Salary}");
-    }
-
+     public virtual void GenerateReport()=>Console.Write($"My name is {Name},I have a number {Id} and I earn a salary = {Salary}");
+    
 }

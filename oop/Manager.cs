@@ -7,10 +7,8 @@ class Manager : Employee
         TeamSize=teamSize;
     }
 
-    public override void Work()
-    {
-        Console.WriteLine($"Manager {Name} is managing a team of {TeamSize} people.");
-    }
+    public override void Work()=>Console.WriteLine($"Manager {Name} is managing a team of {TeamSize} people.");
+    
     public override void GenerateReport()
     {
         base.GenerateReport();
