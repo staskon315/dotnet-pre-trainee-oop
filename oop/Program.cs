@@ -22,6 +22,8 @@
             Console.WriteLine("4. generate a report");
             Console.WriteLine("5. Add an employee");
             Console.WriteLine("6. Delete an employee");
+            Console.WriteLine("7. Searching for an employee by number");
+            Console.WriteLine("8. Calculate total salary");
             Console.WriteLine("0. exit");
             Console.Write("Input: ");
 
@@ -74,6 +76,35 @@
 
                     int removed = employees.RemoveAll(e => e.Id == num);
                     if (removed == 0) Console.WriteLine("This ID does not exist");
+                    break;
+                case "7":
+                    Console.WriteLine("Enter the ID of the employee you want to find:");
+                    Console.Write("Input: ");
+                    while (!int.TryParse(Console.ReadLine(), out num)) Console.WriteLine("invalid input");
+                    bool found = false;
+                    foreach (var empl in employees)
+                    {
+                        if (empl.Id == num)
+                        {
+                            Console.WriteLine($"{empl.Name}-{empl.GetType().Name}");
+                            found = true;
+                            break;
+                        }
+
+                    }
+                    if (!found) Console.WriteLine("An employee with this ID was not found");
+                    break;
+                case "8":
+                    decimal totalSalary = 0;
+                    foreach (var empl in employees) totalSalary += empl.Salary;
+                    Console.WriteLine($"Total salary-{totalSalary}");
+                    break;
+                case "0":
+                    exit = true;
+                    break;
+
+                default:
+                    Console.WriteLine("there is no such option");
                     break;
             }
         }
@@ -152,6 +183,7 @@
         Console.Write("Input: ");
         while (!decimal.TryParse(Console.ReadLine(), out salary) || salary < 0) Console.WriteLine("invalid salary, please try again");
     }
+
 
 
 }
