@@ -12,7 +12,8 @@ class Developer : Employee
     public override void GenerateReport()
     {
         base.GenerateReport();
-        Console.WriteLine($" I am a Developer,I write in {ProgrammingLanguage}");
+        Console.WriteLine($"| Role:    {"Developer"}");
+        Console.WriteLine($"| Language: {ProgrammingLanguage}");
     }
 
 }

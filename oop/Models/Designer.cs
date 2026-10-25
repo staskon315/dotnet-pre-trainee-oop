@@ -12,6 +12,7 @@ class Designer : Employee
     public override void GenerateReport()
     {
         base.GenerateReport();
-        Console.WriteLine($" I am a Designer,I draw using a {DesignTool}");
+        Console.WriteLine($"| Role:    {"Designer"}");
+        Console.WriteLine($"| Tool:    {DesignTool}");
     }
 }

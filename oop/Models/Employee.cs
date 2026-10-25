@@ -21,6 +21,11 @@ abstract class Employee : IReportable
         Salary = salary;
 
     }
-    public virtual void GenerateReport() => Console.Write($"My name is {Name},I have a number {Id} and I earn a salary = {Salary}");
+    public virtual void GenerateReport()
+    {
+        Console.WriteLine($"| ID:      {Id} ");
+        Console.WriteLine($"| Name:    {Name} ");
+        Console.WriteLine($"| Salary:  {Salary}$");
+    }
 
 }

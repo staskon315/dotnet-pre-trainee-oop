@@ -12,6 +12,7 @@ class Manager : Employee
     public override void GenerateReport()
     {
         base.GenerateReport();
-        Console.WriteLine($" I am a Manager,My team consists of {TeamSize} people");
+        Console.WriteLine($"| Role:    {"Manager"}");
+        Console.WriteLine($"| Team Size: {TeamSize}");
     }
 }
