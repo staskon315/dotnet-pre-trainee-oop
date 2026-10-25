@@ -130,16 +130,16 @@ The console menu will appear:
 
 ```
 Select an action
-1. show all employees
-2. make all employees work
-3. change an employee salary
-4. generate a report
+1. Show all employees
+2. Make all employees work
+3. Change an employee salary
+4. Generate a report
 5. Add an employee
 6. Delete an employee
 7. Searching for an employee by number
 8. Calculate total salary
 9. Display employees by type
-0. exit
+0. Exit
 Input:
 ```
 
